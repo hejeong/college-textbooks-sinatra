@@ -1,0 +1,17 @@
+<h2>Edit Textbook Listing</h2>
+<form action="/textbooks/<%= @textbook.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label>Title:</label>
+  <input type="text" name="title" value="<%= @textbook.title %>">
+  <br>
+  <br>
+  <label>Author:</label>
+  <input type="text" name="author" value="<%= @textbook.author %>">
+  <br>
+  <br>
+  <label>Price: $</label>
+  <input type="text" name="price" value="<%= @textbook.price %>">
+  <br>
+  <br>
+  <input type="submit" value="Edit Listing">
+</form>

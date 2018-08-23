@@ -18,4 +18,9 @@ class TextbooksController < ApplicationController
     @textbook = Textbook.find_by_id(params[:id])
     erb :'/textbooks/show'
   end
+
+  get '/textbooks/:id/edit' do
+    @textbook = Textbook.find_by_id(params[:id])
+    erb :'/textbooks/edit'
+  end
 end
