@@ -1,7 +1,10 @@
 <h2>Textbooks For Sale:</h2>
-<a href="/textbooks/new">Create A Listing</a>
+<form action="/textbooks/new" method="get">
+  <input type="submit" value="Create A Listing">
+</form>
+<br>
 <ol>
   <% Textbook.all.each do |textbook| %>
-    <li><%= textbook.title %></li>
+    <li><a href="/textbooks/<%=textbook.id%>"><%= textbook.title %></a></li>
   <% end %>
 </ol>
