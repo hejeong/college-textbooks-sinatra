@@ -13,4 +13,9 @@ class TextbooksController < ApplicationController
     @textbook.save
     redirect to "/textbooks/#{@textbook.id}"
   end
+
+  get '/textbooks/:id' do
+    @textbook = Textbook.find_by_id(params[:id])
+    erb :'/textbooks/show'
+  end
 end
