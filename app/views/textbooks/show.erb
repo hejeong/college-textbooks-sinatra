@@ -1,3 +1,6 @@
 <h2>Listing #<%= @textbook.id %>:</h2>
 <h3><%= @textbook.title %> by <%= @textbook.author %></h3>
 <h4>Price: $<%= @textbook.price %></h4>
+<br>
+<a href="/textbooks">Back</a>
+<a href="/textbooks/<%=@textbook.id%>/edit">Edit</a>
