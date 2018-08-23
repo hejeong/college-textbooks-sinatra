@@ -1,6 +1,6 @@
 class TextbooksController < ApplicationController
   get '/textbooks' do
-    erb :'textbooks/texbooks'
+    erb :'textbooks/textbooks'
   end
 
   get '/textbooks/new' do
