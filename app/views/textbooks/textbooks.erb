@@ -1,0 +1,6 @@
+<h2>Textbooks For Sale:</h2>
+<ol>
+  <% Textbook.all.each do |textbook| %>
+    <li><%= textbook.title %></li>
+  <% end %>
+</ol>

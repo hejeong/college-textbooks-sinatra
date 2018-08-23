@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   post '/signup' do
     @user = User.create(params)
     session[:user_id] = @user.id
-    redirect to "#"
+    redirect to "/textbooks"
   end
 
   get '/login' do
