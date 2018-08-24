@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -42,6 +44,7 @@
     line-height: 36px;
     margin-bottom: 16px;
     color: #f4424e;
+    font-family: 'Open Sans', sans-serif;
   }
 
   h3 {
@@ -120,6 +123,50 @@
     text-align: center;
     color: #61aa20;
     padding: 14px, 25px;
+  }
+
+  .form {
+    width: 40%;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+
+  input[type=text], input[type=password] {
+    width: 90%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  input[type=submit] {
+    background-color: #252d27;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 3px #999;
+    transition: all 0.5s;
+  }
+
+  input[type=submit]:hover{
+    background-color: #3e4740;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+  }
+
+  input[type=submit]:active {
+    background-color: #3e4740;
+    box-shadow: 0 5px #ccc7c7;
+    transform: translateY(2px);
+  }
+  label {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 20px;
   }
 }
 
