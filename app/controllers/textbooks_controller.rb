@@ -2,6 +2,7 @@ class TextbooksController < ApplicationController
   use Rack::Flash
 
   get '/textbooks' do
+    logged_in?
     erb :'textbooks/textbooks'
   end
 

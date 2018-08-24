@@ -16,10 +16,9 @@ class ApplicationController < Sinatra::Base
   helpers do
     def logged_in?
       if session[:user_id] == nil
-        false
-      else
-        true
+        redirect to '/login'
       end
+      true
     end
 
     def current_user
