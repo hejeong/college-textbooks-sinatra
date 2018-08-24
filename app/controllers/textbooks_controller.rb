@@ -22,6 +22,11 @@ class TextbooksController < ApplicationController
   get '/textbooks/:id' do
     logged_in?
     @textbook = Textbook.find_by_id(params[:id])
+    if @textbook.user_id == session[:user_id]
+      @owner = true
+    else
+      @owner = false
+    end
     erb :'/textbooks/show'
   end
 

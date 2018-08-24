@@ -3,4 +3,6 @@
 <h4>Price: $<%= @textbook.price %></h4>
 <br>
 <a href="/textbooks">Back</a>
+<% if @owner %>
 <a href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
+<% end %>
