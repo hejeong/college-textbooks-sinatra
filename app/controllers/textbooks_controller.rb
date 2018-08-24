@@ -17,6 +17,9 @@ class TextbooksController < ApplicationController
       redirect to '/textbooks/new'
     end
     @textbook = Textbook.new(title: params[:title], author: params[:author], price: params[:price])
+    if params[:image_url] != ""
+      @textbook.image_url = params[:image_url]
+    end
     @textbook.user_id = session[:user_id]
     @textbook.save
     flash[:message] = "Listing now posted."
@@ -41,8 +44,16 @@ class TextbooksController < ApplicationController
   end
 
   patch '/textbooks/:id' do
+    if params[:title] == "" || params[:author] == "" || params[:price] == ""
+      flash[:message] = "Input fields can't be blank."
+      redirect to "/textbooks/#{params[:id]}/edit"
+    end
     @textbook = Textbook.find_by_id(params[:id])
     @textbook.update(title: params[:title], author: params[:author], price: params[:price])
+    if params[:image_url] != ""
+      @textbook.image_url = params[:image_url]
+      @textbook.save
+    end
     flash[:message] = "Update successful."
     redirect to "textbooks/#{@textbook.id}"
   end
