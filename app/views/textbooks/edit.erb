@@ -15,3 +15,8 @@
   <br>
   <input type="submit" value="Save">
 </form>
+
+<form action="/textbooks/<%= @textbook.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

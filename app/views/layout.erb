@@ -15,7 +15,11 @@
   </head>
   <body>
     <div class="wrapper">
-
+    <% if flash.has?(:message) %>
+      <div id="flash-message">
+        <%= flash[:message] %>
+      </div>
+    <% end %>
         <%= yield %>
 
       <footer class="branding">

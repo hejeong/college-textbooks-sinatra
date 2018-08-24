@@ -1,4 +1,6 @@
 class TextbooksController < ApplicationController
+  use Rack::Flash
+
   get '/textbooks' do
     erb :'textbooks/textbooks'
   end
@@ -28,5 +30,12 @@ class TextbooksController < ApplicationController
     @textbook = Textbook.find_by_id(params[:id])
     @textbook.update(title: params[:title], author: params[:author], price: params[:price])
     redirect to "textbooks/#{@textbook.id}"
+  end
+
+  delete '/textbooks/:id/delete' do
+    @textbook = Textbook.find_by_id(params[:id])
+    @textbook.destroy
+    flash[:message] = "Listing successfully deleted."
+    redirect to '/textbooks'
   end
 end
