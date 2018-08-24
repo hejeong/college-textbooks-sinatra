@@ -10,6 +10,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    if session[:user_id] != nil
+      redirect to '/textbooks'
+    end
     erb :index
   end
 
