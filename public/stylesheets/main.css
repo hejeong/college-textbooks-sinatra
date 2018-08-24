@@ -41,6 +41,7 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
+    color: #f4424e;
   }
 
   h3 {
@@ -105,6 +106,20 @@
 
   .image {
     float: right;
+  }
+
+  a.login {
+    text-decoration: none;
+    text-align: center;
+    color: #261f1f;
+    padding: 14px, 25px;
+  }
+
+  a.signup {
+    text-decoration: none;
+    text-align: center;
+    color: #61aa20;
+    padding: 14px, 25px;
   }
 }
 
