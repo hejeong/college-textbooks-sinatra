@@ -5,6 +5,12 @@
     <li><a href="/textbooks/<%=book.id%>"><%= book.title %></a></li>
   <% end %>
 </ul>
+<h3>Purchased by <%=@user.username %>:</h3>
+<ul>
+  <% @purchased.each do |book| %>
+    <li><a href="/textbooks/<%=book.id%>"><%= book.title %></a></li>
+  <% end %>
+</ul>
 <form action="/textbooks" method="get">
   <input type="submit" value="Return To List">
 </form>

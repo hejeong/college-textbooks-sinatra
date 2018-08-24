@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   get '/user/:slug' do
     logged_in?
     @user = User.find_by_slug(params[:slug])
+    @purchased = Textbook.where(buyer_id: @user.id)
     erb :'users/profile_listings'
   end
 
