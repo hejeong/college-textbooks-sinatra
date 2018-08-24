@@ -239,6 +239,12 @@
     color
   }
 
+  .my-profile {
+    position: relative;
+    top: 30px;
+    left: 800px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {

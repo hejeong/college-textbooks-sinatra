@@ -6,6 +6,7 @@ class TextbooksController < ApplicationController
     @textbooks = Textbook.all.select do |book|
       book.buyer_id == nil
     end
+    @user = current_user
     erb :'textbooks/textbooks'
   end
 
