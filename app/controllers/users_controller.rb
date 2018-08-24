@@ -27,6 +27,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/textbooks'
     else
+      flash[:message] = "Incorrect username or password. Please try again."
       redirect to '/login'
     end
   end
