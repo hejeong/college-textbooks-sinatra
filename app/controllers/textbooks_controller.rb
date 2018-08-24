@@ -7,6 +7,7 @@ class TextbooksController < ApplicationController
   end
 
   get '/textbooks/new' do
+    logged_in?
     erb :'textbooks/new'
   end
 
@@ -18,11 +19,13 @@ class TextbooksController < ApplicationController
   end
 
   get '/textbooks/:id' do
+    logged_in?
     @textbook = Textbook.find_by_id(params[:id])
     erb :'/textbooks/show'
   end
 
   get '/textbooks/:id/edit' do
+    logged_in?
     @textbook = Textbook.find_by_id(params[:id])
     erb :'/textbooks/edit'
   end
