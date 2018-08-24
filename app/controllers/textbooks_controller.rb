@@ -40,6 +40,10 @@ class TextbooksController < ApplicationController
   get '/textbooks/:id/edit' do
     logged_in?
     @textbook = Textbook.find_by_id(params[:id])
+    if current_user.id != @textbook.user_id
+      flash[:message] = "You cannot edit another user's item."
+      redirect to '/textbooks'
+    end
     erb :'/textbooks/edit'
   end
 
