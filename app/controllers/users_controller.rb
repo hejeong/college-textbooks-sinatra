@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
+    if User.exists?(username: params[:username])
+      flash[:message] = "Username taken; please try again."
+      redirect to '/signup'
+    end
     @user = User.create(params)
     session[:user_id] = @user.id
+    flash[:message] = "Welcome!"
     redirect to "/textbooks"
   end
 
