@@ -226,6 +226,11 @@
      left: 60px;
   }
 
+  input[type=submit].return {
+     position:relative;
+     top: 10px;
+  }
+
   #purchased {
     color: #f93654;
   }
