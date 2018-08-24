@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20180823164413) do
     t.string  "title"
     t.string  "author"
     t.decimal "price"
+    t.string  "image_url"
     t.integer "user_id"
   end
 

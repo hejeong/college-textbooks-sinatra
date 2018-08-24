@@ -4,6 +4,7 @@ class CreateTextbooks < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.decimal :price
+      t.string :image_url
       t.integer :user_id
     end
   end
