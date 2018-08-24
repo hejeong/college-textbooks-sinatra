@@ -219,6 +219,21 @@
      left: 83px;
   }
 
+  input[type=submit].purchase {
+    background: #b71212;
+     position:relative;
+     top: -28px;
+     left: 60px;
+  }
+
+  #purchased {
+    color: #f93654;
+  }
+
+  .purchase {
+    color
+  }
+
 }
 
 @media screen and (max-width: 600px) {

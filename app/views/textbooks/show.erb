@@ -4,10 +4,18 @@
     <h3><%= @textbook.title %> by <%= @textbook.author %></h3>
     <h4>Owner: <a class="owner" href="/user/<%= @textbook.user.slug %>"><%= @textbook.user.username %></a></h4>
     <h4>Price: $<%= @textbook.price %></h4>
+    <% if @textbook.buyer_id != nil %>
+    <h4 id="purchased">PURCHASED</h4>
+    <% end %>
     <br>
     <a href="/textbooks">Back</a>
     <% if @owner %>
-    <a class="edit-delete" href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
+      <a class="edit-delete" href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
+    <% elsif @textbook.buyer_id == nil %>
+      <form action="/textbooks/<%=@textbook.id%>/purchase" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <input class="purchase" type="submit" value="Purchase">
+      </form>
     <% end %>
   </div>
   <div class="image">

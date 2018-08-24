@@ -62,6 +62,13 @@ class TextbooksController < ApplicationController
     redirect to "textbooks/#{@textbook.id}"
   end
 
+  patch '/textbooks/:id/purchase' do
+    @textbook = Textbook.find_by_id(params[:id])
+    @textbook.update(buyer_id: session[:user_id])
+    flash[:message] = "Purchase successful."
+    redirect to "/textbooks/#{@textbook.id}"
+  end
+
   delete '/textbooks/:id/delete' do
     @textbook = Textbook.find_by_id(params[:id])
     @textbook.destroy
