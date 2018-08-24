@@ -16,7 +16,8 @@
   <input type="submit" value="Save">
 </form>
 
-<form action="/textbooks/<%= @textbook.id %>/delete" method="post">
+<form onsubmit="return confirm('Are you sure you want to delete this listing?')"
+      action="/textbooks/<%= @textbook.id %>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
 </form>
