@@ -84,6 +84,14 @@
   #flash-message {
     color: red;
   }
+
+  .button-container {
+    display: inline;
+  }
+
+  .textbook-list {
+    list-style: circle inside;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -118,5 +126,12 @@
 
   #flash-message {
     color: red;
+  }
+  .button-container {
+    display: inline;
+  }
+
+  .textbook-list {
+    list-style: circle inside;
   }
 }

@@ -1,9 +1,13 @@
 <h2>Textbooks For Sale:</h2>
-<form action="/textbooks/new" method="get">
+<form class="button-container" action="/textbooks/new" method="get">
   <input type="submit" value="Create A Listing">
 </form>
+<form class="button-container" action="/user/logout" method="get">
+  <input type="submit" value="Log Out">
+</form>
 <br>
-<ul>
+<br>
+<ul class="texbook-list">
   <% Textbook.all.each do |textbook| %>
     <li><a href="/textbooks/<%=textbook.id%>"><%= textbook.title %></a></li>
   <% end %>
