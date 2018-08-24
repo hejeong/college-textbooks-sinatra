@@ -14,10 +14,9 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="logo">
-      <link href="http://firehouseculturalcenter.org/wp-content/uploads/2014/01/sinatra-sig.png" rel="icon" type="image/png">
-    </div>
     <div class="wrapper">
+      <img src="http://firehouseculturalcenter.org/wp-content/uploads/2014/01/sinatra-sig.png" class="logo">
+
     <% if flash.has?(:message) %>
       <div id="flash-message">
         <%= flash[:message] %>

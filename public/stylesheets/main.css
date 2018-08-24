@@ -93,6 +93,11 @@
   .textbook-list {
     list-style: circle inside;
   }
+  .logo {
+    height: 30px;
+    width: 70px;
+    display: inline;
+  }
 }
 
 @media screen and (max-width: 600px) {
