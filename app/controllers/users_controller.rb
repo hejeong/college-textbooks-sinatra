@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
+    if params[:username] == "" || params[:password] == "" || params[:email] == ""
+      flash[:message] = "Input fields can't be blank."
+      redirect to '/signup'
+    end
     if User.exists?(username: params[:username])
       flash[:message] = "Username taken; please try again."
       redirect to '/signup'
@@ -22,6 +26,10 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
+    if params[:username] == "" || params[:password] == "" || params[:email] == ""
+      flash[:message] = "Input fields can't be blank."
+      redirect to '/login'
+    end
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
