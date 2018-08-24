@@ -1,0 +1,7 @@
+<h2>Profile: <%= @user.username %></h2>
+<h3>Listings:</h3>
+<ul>
+  <% @user.textbooks.each do |book| %>
+    <li><a href="/textbooks/<%=textbook.id%>"><%= book.title %></a></li>
+  <% end %>
+</ul>

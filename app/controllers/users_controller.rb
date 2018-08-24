@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   get '/user/:slug' do
     logged_in?
     @user = User.find_by_slug(params[:slug])
-    erb :listings
+    erb :'users/profile_listings'
   end
 
   get '/logout' do
