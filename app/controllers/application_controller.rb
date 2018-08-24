@@ -1,6 +1,5 @@
 require './config/environment'
 require 'rack-flash'
-require_relative '../models/concerns/slugifiable'
 
 class ApplicationController < Sinatra::Base
   configure do
