@@ -2,6 +2,8 @@ require './config/environment'
 require 'rack-flash'
 
 class ApplicationController < Sinatra::Base
+  extend Slugifiable::ClassMethods
+  include Slugifiable::InstanceMethods
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
