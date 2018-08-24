@@ -22,6 +22,9 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
+    if session[:user_id] != nil
+      redirect to '/textbooks'
+    end
     erb :'users/login'
   end
 
@@ -31,7 +34,7 @@ class UsersController < ApplicationController
       redirect to '/login'
     end
     @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
+    if @user != nil && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect to '/textbooks'
     else
