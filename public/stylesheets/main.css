@@ -98,6 +98,14 @@
     width: 70px;
     display: inline;
   }
+
+  .float-left {
+    float: left;
+  }
+
+  .image {
+    float: right;
+  }
 }
 
 @media screen and (max-width: 600px) {

@@ -1,9 +1,11 @@
 <h2>Listing #<%= @textbook.id %>:</h2>
-<h3><%= @textbook.title %> by <%= @textbook.author %></h3>
-<h4>Owner: <a href="/user/<%= @textbook.user.slug %>"><%= @textbook.user.username %></a></h4>
-<h4>Price: $<%= @textbook.price %></h4>
-<br>
-<a href="/textbooks">Back</a>
-<% if @owner %>
-<a href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
-<% end %>
+<div class="float-left">
+  <h3><%= @textbook.title %> by <%= @textbook.author %></h3>
+  <h4>Owner: <a href="/user/<%= @textbook.user.slug %>"><%= @textbook.user.username %></a></h4>
+  <h4>Price: $<%= @textbook.price %></h4>
+  <br>
+  <a href="/textbooks">Back</a>
+  <% if @owner %>
+  <a href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
+  <% end %>
+</div>
