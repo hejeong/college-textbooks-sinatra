@@ -23,6 +23,11 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/user/:slug' do
+    logged_in?
+    @user = User.find_by_slug(params[:slug])
+    erb :listings
+  end
 
   get '/logout' do
     session.clear
