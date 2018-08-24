@@ -12,6 +12,10 @@ class TextbooksController < ApplicationController
   end
 
   post '/textbooks' do
+    if params[:title] == "" || params[:author] == "" || params[:price] == ""
+      flash[:message] = "Input fields can't be blank."
+      redirect to '/textbooks/new'
+    end
     @textbook = Textbook.new(title: params[:title], author: params[:author], price: params[:price])
     @textbook.user_id = session[:user_id]
     @textbook.save
