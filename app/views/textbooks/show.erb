@@ -1,14 +1,16 @@
 <h2>Listing #<%= @textbook.id %>:</h2>
-<div class="float-left">
-  <h3><%= @textbook.title %> by <%= @textbook.author %></h3>
-  <h4>Owner: <a href="/user/<%= @textbook.user.slug %>"><%= @textbook.user.username %></a></h4>
-  <h4>Price: $<%= @textbook.price %></h4>
-  <br>
-  <a href="/textbooks">Back</a>
-  <% if @owner %>
-  <a href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
-  <% end %>
-</div>
-<div class="image">
-  <img src="<%= @textbook.image_url %>">
+<div class="wrap clearfix">
+  <div class="float-left">
+    <h3><%= @textbook.title %> by <%= @textbook.author %></h3>
+    <h4>Owner: <a class="owner" href="/user/<%= @textbook.user.slug %>"><%= @textbook.user.username %></a></h4>
+    <h4>Price: $<%= @textbook.price %></h4>
+    <br>
+    <a href="/textbooks">Back</a>
+    <% if @owner %>
+    <a class="edit-delete" href="/textbooks/<%=@textbook.id%>/edit">Edit/Delete</a>
+    <% end %>
+  </div>
+  <div class="image">
+    <img src="<%= @textbook.image_url %>">
+  </div>
 </div>

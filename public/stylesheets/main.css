@@ -23,7 +23,7 @@
   }
 
   .wrapper {
-    background: #fff;
+    background: #c2d7f9;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
     box-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -31,6 +31,8 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
   h1 {
@@ -43,7 +45,7 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
-    color: #f4424e;
+    color: #778eba;
     font-family: 'Open Sans', sans-serif;
   }
 
@@ -105,29 +107,56 @@
 
   .float-left {
     float: left;
+
+    border-radius: 0px;
+    box-shadow: none;
   }
 
   .image {
     float: right;
+    border-radius: 10px;
+    background-color: #fff8e5;
+    padding: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+  a {
+    text-decoration: none;
+    color: #261f1f;
+    padding: 5px;
   }
 
+  a:active {
+    color: #fff;
+  }
+
+  a:hover{
+    text-decoration: underline;
+  }
   a.login {
-    text-decoration: none;
     text-align: center;
     color: #261f1f;
     padding: 14px, 25px;
   }
 
   a.signup {
-    text-decoration: none;
     text-align: center;
     color: #61aa20;
     padding: 14px, 25px;
   }
 
+  a.edit-delete{
+    color: #b71212;
+  }
+
+  a.owner {
+    color: #f2c53e;
+  }
+  a.owner:active{
+    color: #ffdf7f;
+  }
   .form {
     width: 40%;
-    background-color: #f2f2f2;
+    background-color: #8697b7;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -150,7 +179,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    box-shadow: 0 3px #999;
+    box-shadow: 0 3px #848484;
     transition: all 0.5s;
   }
 
@@ -168,6 +197,28 @@
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 20px;
   }
+  .clearfix::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+   background-color: #f2f2f2;
+  }
+
+  .wrap {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    background: #7795c6;
+  }
+
+  input[type=submit].delete {
+    background: #b71212;
+     position:relative;
+     top: -39px;
+     left: 83px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -208,6 +259,6 @@
   }
 
   .textbook-list {
-    list-style: circle inside;
+     list-style-type: circle;
   }
 }
