@@ -3,6 +3,9 @@ class TextbooksController < ApplicationController
 
   get '/textbooks' do
     logged_in?
+    @textbooks = Textbook.all.select do |book|
+      book.buyer_id == nil
+    end
     erb :'textbooks/textbooks'
   end
 

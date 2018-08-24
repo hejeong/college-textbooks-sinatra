@@ -8,7 +8,7 @@
 <br>
 <br>
 <ul class="texbook-list">
-  <% Textbook.all.each do |textbook| %>
+  <% @textbooks.each do |textbook| %>
     <li><a href="/textbooks/<%=textbook.id%>"><%= textbook.title %></a></li>
   <% end %>
 </ul>
