@@ -19,6 +19,7 @@ class ApplicationController < Sinatra::Base
   helpers do
     def logged_in?
       if session[:user_id] == nil
+        flash[:message] = "Please login first."
         redirect to '/login'
       end
       true
