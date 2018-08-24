@@ -15,8 +15,8 @@ Then execute the shotgun gem:
 And copy and paste the link to your browser.
 
 ## Built With
-Markup: * Sinatra
-        * ActiveRecord
+* Sinatra
+* ActiveRecord
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/hejeong/college-textbooks-sinatra-project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
