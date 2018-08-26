@@ -9,7 +9,9 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret"
   end
 
+  # Render Welcome Page
   get "/" do
+    # if logged_in, users won't see welcome page
     if session[:user_id] != nil
       redirect to '/textbooks'
     end
@@ -17,6 +19,8 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
+    # if not logged_in, redirected to log in page
+    # else return true
     def logged_in?
       if session[:user_id] == nil
         flash[:message] = "Please login first."
@@ -25,6 +29,7 @@ class ApplicationController < Sinatra::Base
       true
     end
 
+    # returns current_user object
     def current_user
       User.find_by_id(session[:user_id])
     end
